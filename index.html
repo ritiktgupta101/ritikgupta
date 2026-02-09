@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritik Gupta | Portfolio</title>
+
+  <style>
+    :root {
+      --brown: #6f4e37;
+      --beige: #f5f0e6;
+      --dark: #2e2e2e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--beige);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 80px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      color: var(--brown);
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 14px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: var(--brown);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Home */
+    .home {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      min-height: 70vh;
+    }
+
+    .home img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--brown);
+    }
+
+    .home h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .home p {
+      max-width: 650px;
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Beyond Work */
+    .beyond-work {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px;
+    }
+
+    .beyond-work h2 {
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+
+    .beyond-subtitle {
+      color: #555;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .beyond-card {
+      background: #efe4d8;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .beyond-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+
+    .beyond-card h3 {
+      margin-bottom: 6px;
+      color: var(--brown);
+      font-size: 18px;
+    }
+
+    .beyond-card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .beyond-links a {
+      font-size: 14px;
+      color: var(--brown);
+      text-decoration: underline;
+      margin-right: 16px;
+      font-weight: 500;
+    }
+
+    /* Contact Section (matches Beyond Work) */
+.contact-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px;
+}
+
+.contact-section h2 {
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  color: #555;
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.contact-icons-row {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.contact-icons-row a {
+  display: inline-flex;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.contact-icons-row a:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 14px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Cursor hint */
+.lightbox-img {
+  cursor: pointer;
+}
+
+.beyond-card img {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      header, section {
+        padding: 32px;
+      }
+
+      .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .home img {
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ritik Gupta</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="home">
+  <div>
+    <h2>Hello, I’m Ritik Gupta</h2>
+    <p>
+      <strong>Engineer by degree. Business strategist by choice.</strong><br />
+      MBA at SDA Bocconi, working where tech, product, and growth meet.
+      I <strong>build products, sell ideas</strong> and turn
+      <strong>strategy into revenue.</strong>
+    </p>
+
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/ritik-gupta-631a611bb/" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.86 1 4.98 2.12 4.98 3.5ZM0.22 8H4.78V24H0.22V8ZM8.98 8H13.34V10.16H13.4C14.01 9 15.5 7.78 17.72 7.78C22.36 7.78 23.22 10.66 23.22 15.12V24H18.66V15.9C18.66 13.98 18.62 11.5 16 11.5C13.34 11.5 12.94 13.6 12.94 15.76V24H8.98V8Z"/>
+        </svg>
+      </a>
+
+      <a href="mailto:guptaritik0171@gmail.com">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+          <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+        </svg>
+      </a>
+
+      <a href="Ritik_Gupta_CV.pdf" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+          <path d="M5 20H19V18H5V20ZM12 2V14L16 10L17.41 11.41L12 16.83L6.59 11.41L8 10L12 14V2Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <img src="ritik.jpeg" alt="Ritik Gupta" class="lightbox-img" data-lightbox="ritik.jpeg">
+
+  </div>
+</section>
+
+<section class="beyond-work">
+  <h2>Beyond Work</h2>
+  <p class="beyond-subtitle">
+    Things I’ve explored outside formal roles — driven by curiosity, leadership, and learning.
+  </p>
+
+  <div class="beyond-grid">
+    <div class="beyond-card">
+      <img src="./images/beyond/startup.png" alt="Startup"class="lightbox-img"data-lightbox="./images/beyond/startup.png"/>
+
+      <h3>Startup & Side Projects</h3>
+      <p>Built and experimented with early-stage ideas across product and execution.</p>
+      <div class="beyond-links">
+        <a href="startup-deck.pdf" target="_blank">Deep Dive</a>
+        <a href="startup-doc.pdf" target="_blank">Startup Snapshot</a>
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <img src="./images/beyond/basketball-intercollege.png" alt="Basketball"class="lightbox-img"data-lightbox="./images/beyond/basketball-intercollege.png"/>
+
+      <h3>Basketball</h3>
+      <p>Represented my college in inter-college basketball tournaments.</p>
+    </div>
+
+    <div class="beyond-card">
+      <img
+  src="./images/beyond/csr.png"
+  alt="Community Work"
+  class="lightbox-img"
+  data-lightbox="./images/beyond/csr.png"
+/>
+
+
+      <h3>Community & Events</h3>
+      <p>Contributed to social and community initiatives and events.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+  <p class="contact-subtitle">
+    Feel free to reach out on
+  </p>
+
+  <div class="contact-icons-row">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/ritik-gupta-631a611bb/" target="_blank" aria-label="LinkedIn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.86 1 4.98 2.12 4.98 3.5ZM0.22 8H4.78V24H0.22V8ZM8.98 8H13.34V10.16H13.4C14.01 9 15.5 7.78 17.72 7.78C22.36 7.78 23.22 10.66 23.22 15.12V24H18.66V15.9C18.66 13.98 18.62 11.5 16 11.5C13.34 11.5 12.94 13.6 12.94 15.76V24H8.98V8Z"/>
+      </svg>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:guptaritik0171@gmail.com" aria-label="Email">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+        <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+      </svg>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919620443161" target="_blank" aria-label="WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--brown)">
+        <path d="M12.04 2C6.58 2 2.15 6.36 2.15 11.73c0 2.11.7 4.07 1.89 5.66L2 22l4.77-1.99a10.07 10.07 0 0 0 5.27 1.44c5.46 0 9.88-4.36 9.88-9.73S17.5 2 12.04 2z"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded view" />
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".lightbox-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.dataset.lightbox || img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>

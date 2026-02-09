@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ritik Gupta</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f5f0e6;
+      color: #2e2e2e;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 80px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      color: #6f4e37;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #2e2e2e;
+      font-size: 14px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px;
+    }
+
+    h2 {
+      color: #6f4e37;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #555;
+      margin-bottom: 48px;
+      max-width: 720px;
+    }
+
+    /* ================= PROJECT CARD ================= */
+
+    .project-card {
+      background: #efe4d8;
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .project-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #6f4e37;
+      margin-bottom: 10px;
+    }
+
+    .project-about {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+
+    .view-link {
+      font-size: 14px;
+      color: #6f4e37;
+      cursor: pointer;
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    /* Expandable content */
+    .project-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, margin-top 0.3s ease;
+    }
+
+    .project-card.open .project-content {
+      max-height: 2000px;
+      margin-top: 24px;
+    }
+
+    .project-content p {
+      max-width: 800px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .project-content ul {
+      margin: 8px 0 14px 18px;
+    }
+
+    .project-images {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .project-images img {
+      width: 160px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .project-links {
+      margin-top: 18px;
+    }
+
+    .project-links a {
+      margin-right: 18px;
+      font-size: 14px;
+      color: #6f4e37;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ritik Gupta</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Projects</h2>
+  <p class="subtitle">
+    A selection of projects focused on building, experimenting, and learning through execution.
+  </p>
+
+  <!-- ================= DOCSAB ================= -->
+  <div class="project-card">
+    <div class="project-title">DOCSAB.ai</div>
+    <div class="project-about">
+      An AI-powered platform designed to simplify complex medical reports and make healthcare information easier to understand.
+    </div>
+    <div class="view-link" onclick="toggleProject(this)">View full case study</div>
+
+    <div class="project-content">
+      <p><strong>Problem</strong><br>
+        Medical reports are complex and overwhelming for patients.
+      </p>
+      <p><strong>Solution</strong><br>
+        Used AI to convert reports into structured, easy-to-understand explanations.
+      </p>
+      <p><strong>What was done</strong></p>
+      <ul>
+        <li>Defined product vision and user flows</li>
+        <li>Designed AI-driven explanation logic</li>
+        <li>Validated concept through demos</li>
+      </ul>
+
+      <div class="project-images">
+        <img src="images/docsab/1.png" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="project-links">
+        <a href="https://ritikgupta17230.wixsite.com/docsab" target="_blank">View Website</a>
+        <a href="#" target="_blank">View Pitch Deck</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SYNC WAVE ================= -->
+ 
+
+  <!-- ================= PM CASEBOOK ================= -->
+  <div class="project-card">
+    <div class="project-title">Product Management Casebook</div>
+    <div class="project-about">
+      A structured casebook capturing real-world product problems, decisions, and learnings through research and interviews.
+    </div>
+    <div class="view-link" onclick="toggleProject(this)">View full case study</div>
+
+    <div class="project-content">
+      <p><strong>Problem</strong><br>
+        PM concepts often lack real-world context.
+      </p>
+      <p><strong>Solution</strong><br>
+        Created a practical casebook highlighting real PM decisions.
+      </p>
+      <p><strong>What was done</strong></p>
+      <ul>
+        <li>Interviewed product professionals</li>
+        <li>Documented decision-making frameworks</li>
+        <li>Designed reusable case formats</li>
+      </ul>
+
+      <div class="project-links">
+        <a href="casebook.pdf" target="_blank">View Casebook</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+  function toggleProject(el) {
+    const card = el.closest('.project-card');
+    card.classList.toggle('open');
+    el.textContent = card.classList.contains('open')
+      ? 'Hide case study'
+      : 'View full case study';
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
